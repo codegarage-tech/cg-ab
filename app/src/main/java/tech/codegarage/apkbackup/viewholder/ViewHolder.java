@@ -19,9 +19,9 @@ public class ViewHolder extends RecyclerView.ViewHolder {
 
     public ViewHolder(View view) {
         super(view);
-        track = (TextView) view.findViewById(R.id.track);
-        artist = (TextView) view.findViewById(R.id.artist);
-        avatar = (ImageView) view.findViewById(R.id.yal_ms_avatar);
+        track = (TextView) view.findViewById(R.id.tv_app_name);
+        artist = (TextView) view.findViewById(R.id.tv_app_package);
+        avatar = (ImageView) view.findViewById(R.id.iv_app_icon);
     }
 
     public static void bind(ViewHolder viewHolder, ApplicationInfo applicationInfo) {

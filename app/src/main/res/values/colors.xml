@@ -4,6 +4,9 @@
     <color name="colorPrimaryDark">#8a53cf</color>
     <color name="colorAccent">#FF4081</color>
 
+    <color name="textColorPrimary">#212121</color>
+    <color name="textColorSecondary">#757575</color>
+
     <!-- Jelly toolbar -->
     <color name="colorTransparent">#00ffffff</color>
     <color name="colorStart">#cb5ed9</color>

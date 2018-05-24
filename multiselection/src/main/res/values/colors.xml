@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="yal_ms_divider_color">#101010</color>
-    <color name="yal_ms_divider_knob_color">#c0c0c0</color>
+    <color name="colorPrimary">#7e6fe2</color>
+    <color name="colorPrimaryDark">#8a53cf</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="yal_ms_divider_color">@color/colorPrimary</color>
+    <color name="yal_ms_divider_knob_color">@color/colorAccent</color>
 </resources>

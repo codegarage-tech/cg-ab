@@ -8,13 +8,12 @@
         android:id="@+id/yal_ms_recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginRight="@dimen/yal_ms_knob_width_half"/>
+        android:layout_marginRight="@dimen/yal_ms_knob_width_half" />
 
     <View
         android:layout_width="@dimen/yal_ms_knob_width_half"
         android:layout_height="@dimen/yal_ms_knob_height"
         android:layout_gravity="right|center_vertical"
-        android:background="@drawable/yal_ms_round_left"
-        />
+        android:background="@drawable/yal_ms_round_left" />
 
 </FrameLayout>

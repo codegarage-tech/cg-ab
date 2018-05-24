@@ -9,7 +9,6 @@ import android.support.annotation.NonNull
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.util.DisplayMetrics
-import android.util.Rational
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -230,7 +229,7 @@ internal class MultiSelectImpl<I : Comparable<I>>(myContext: Context,
                 if (view is ViewGroup) {
                     (0..view.childCount - 1)
                             .map { view.getChildAt(it) }
-                            .filter { it.id != R.id.yal_ms_avatar }
+                            .filter { it.id != R.id.iv_app_icon }
                             .forEach { it?.alpha = value }
                 }
             }
