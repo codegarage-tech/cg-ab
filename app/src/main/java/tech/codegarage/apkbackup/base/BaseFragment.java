@@ -1,8 +1,6 @@
 package tech.codegarage.apkbackup.base;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -13,17 +11,19 @@ import android.view.ViewGroup;
 import tech.codegarage.apkbackup.R;
 import tech.codegarage.apkbackup.interfaces.OnFragmentBackPressedListener;
 import tech.codegarage.apkbackup.interfaces.OnFragmentResultListener;
-import yalantis.com.sidemenu.interfaces.ScreenShotable;
+//import yalantis.com.sidemenu.interfaces.ScreenShotable;
 
 /**
  * @author Md. Rashadul Alam
  * Email: rashed.droid@gmail.com
  */
-public abstract class BaseFragment extends Fragment implements OnFragmentBackPressedListener, OnFragmentResultListener, ScreenShotable {
+public abstract class BaseFragment extends Fragment implements OnFragmentBackPressedListener, OnFragmentResultListener
+//        , ScreenShotable
+{
 
     //Local variable
     public View rootView, containerView;
-    public Bitmap bitmap;
+//    public Bitmap bitmap;
 
     //Abstract declaration
     public abstract int initFragmentLayout();
@@ -75,24 +75,24 @@ public abstract class BaseFragment extends Fragment implements OnFragmentBackPre
         containerView = view.findViewById(R.id.container);
     }
 
-    @Override
-    public void takeScreenShot() {
-        Thread thread = new Thread() {
-            @Override
-            public void run() {
-                Bitmap mBitmap = Bitmap.createBitmap(containerView.getWidth(), containerView.getHeight(), Bitmap.Config.ARGB_8888);
-                Canvas canvas = new Canvas(mBitmap);
-                containerView.draw(canvas);
-                bitmap = mBitmap;
-            }
-        };
-
-        thread.start();
-
-    }
-
-    @Override
-    public Bitmap getBitmap() {
-        return bitmap;
-    }
+//    @Override
+//    public void takeScreenShot() {
+//        Thread thread = new Thread() {
+//            @Override
+//            public void run() {
+//                Bitmap mBitmap = Bitmap.createBitmap(containerView.getWidth(), containerView.getHeight(), Bitmap.Config.ARGB_8888);
+//                Canvas canvas = new Canvas(mBitmap);
+//                containerView.draw(canvas);
+//                bitmap = mBitmap;
+//            }
+//        };
+//
+//        thread.start();
+//
+//    }
+//
+//    @Override
+//    public Bitmap getBitmap() {
+//        return bitmap;
+//    }
 }

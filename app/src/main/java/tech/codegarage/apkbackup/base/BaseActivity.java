@@ -1,6 +1,5 @@
 package tech.codegarage.apkbackup.base;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -58,10 +57,10 @@ public abstract class BaseActivity extends AppCompatActivity {
 
 //        TAG = initActivityTag();
         mSavedInstanceState = savedInstanceState;
-        initIntentData(mSavedInstanceState, getIntent());
-        initActivityViews();
 
         if (checkAndRequestPermissions()) {
+            initIntentData(mSavedInstanceState, getIntent());
+            initActivityViews();
             initActivityViewsData(mSavedInstanceState);
             initActivityActions(mSavedInstanceState);
         }
@@ -108,6 +107,8 @@ public abstract class BaseActivity extends AppCompatActivity {
         switch (requestCode) {
             case REQUEST_CODE_PERMISSION:
                 if (RuntimePermissionManager.isAllPermissionsGranted(mActivity, permissions)) {
+                    initIntentData(mSavedInstanceState, getIntent());
+                    initActivityViews();
                     initActivityViewsData(mSavedInstanceState);
                     initActivityActions(mSavedInstanceState);
                 }
