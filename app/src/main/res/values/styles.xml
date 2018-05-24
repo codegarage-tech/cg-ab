@@ -24,7 +24,7 @@
     </style>
 
     <style name="toolbar_base">
-        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_height">?actionBarSize</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:windowNoTitle">true</item>
         <item name="android:background">@drawable/toolbar_bg</item>

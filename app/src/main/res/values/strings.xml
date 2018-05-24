@@ -7,4 +7,7 @@
     <string name="venues">Venues</string>
     <string name="reviews">Reviews</string>
     <string name="friends">Friends</string>
+
+    <!-- Activity title -->
+    <string name="title_activity_home">Home</string>
 </resources>

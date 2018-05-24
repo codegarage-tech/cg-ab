@@ -23,8 +23,7 @@ import com.yalantis.jellytoolbar.widget.JellyToolbar;
 import tech.codegarage.apkbackup.R;
 import tech.codegarage.apkbackup.adapter.ColorTabsAdapter;
 import tech.codegarage.apkbackup.base.BaseActivity;
-
-import static tech.codegarage.apkbackup.util.AppUtil.getStatusBarHeight;
+import tech.codegarage.apkbackup.view.CanaroTextView;
 
 /**
  * @author Md. Rashadul Alam
@@ -36,6 +35,7 @@ public class HomeActivity extends BaseActivity {
     private JellyToolbar toolbar;
     private AppCompatEditText editText;
     private JellyListener jellyListener;
+    private CanaroTextView toolbarTitle;
     private static final String TEXT_KEY = "text";
 
     //Color match tab layout
@@ -64,6 +64,7 @@ public class HomeActivity extends BaseActivity {
     @Override
     public void initActivityViews() {
         toolbar = (JellyToolbar) findViewById(R.id.toolbar);
+        toolbarTitle = (CanaroTextView) findViewById(R.id.toolbar_title);
         colorMatchTabLayoutBackup = (ColorMatchTabLayout) findViewById(R.id.color_match_tab_layout_backup);
         viewPagerBackup = (ViewPager) findViewById(R.id.view_pager_backup);
     }
@@ -102,7 +103,28 @@ public class HomeActivity extends BaseActivity {
      * Jelly toolbar methods *
      *************************/
     private void setActionBar() {
+        toolbarTitle.setText(R.string.title_activity_home);
+
         jellyListener = new JellyListener() {
+
+            @Override
+            public void onToolbarExpandingStarted() {
+                toolbarTitle.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onToolbarCollapsingStarted() {
+                toolbarTitle.setVisibility(View.VISIBLE);
+            }
+
+            @Override
+            public void onToolbarExpanded() {
+            }
+
+            @Override
+            public void onToolbarCollapsed() {
+            }
+
             @Override
             public void onCancelIconClicked() {
                 if (TextUtils.isEmpty(editText.getText())) {
@@ -114,26 +136,16 @@ public class HomeActivity extends BaseActivity {
         };
         toolbar.getToolbar().setNavigationIcon(R.drawable.ic_menu);
         toolbar.setJellyListener(jellyListener);
-        toolbar.getToolbar().setPadding(0, getStatusBarHeight(getActivity()), 0, 0);
 
         editText = (AppCompatEditText) LayoutInflater.from(this).inflate(R.layout.toolbar_edittext, null);
         editText.setBackgroundResource(R.color.colorTransparent);
         toolbar.setContentView(editText);
-
-        getWindow().getDecorView().setSystemUiVisibility(
-                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
 
         toolbar.getToolbar().setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
             }
         });
-
-//        setSupportActionBar(toolbar.getToolbar());
-//        getSupportActionBar().setHomeButtonEnabled(true);
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//        getSupportActionBar().setDisplayShowTitleEnabled(false);
     }
 
     @Override
@@ -163,6 +175,9 @@ public class HomeActivity extends BaseActivity {
             Drawable icon = iconsArray.getDrawable(i);
             colorMatchTabLayoutBackup.addTab(ColorTabAdapter.createColorTab(colorMatchTabLayoutBackup, tabName, selectedColor, icon));
         }
+
+        //Change toolbar color for the first time
+        toolbarTitle.setTextColor(Color.parseColor(colorsArray[0]));
     }
 
     private void initViewPager() {
@@ -175,12 +190,12 @@ public class HomeActivity extends BaseActivity {
         colorMatchTabLayoutBackup.addOnColorTabSelectedListener(new OnColorTabSelectedListener() {
             @Override
             public void onSelectedTab(ColorTab tab) {
-                viewPagerBackup.setCurrentItem((tab !=null)?tab.getPosition():0);
-                viewPagerBackup.setBackgroundColor((tab !=null)?tab.getSelectedColor():ContextCompat.getColor(HomeActivity.this, R.color.colorPrimary));
+                viewPagerBackup.setCurrentItem((tab != null) ? tab.getPosition() : 0);
+                viewPagerBackup.setBackgroundColor((tab != null) ? tab.getSelectedColor() : ContextCompat.getColor(HomeActivity.this, R.color.colorPrimary));
                 viewPagerBackup.getBackground().setAlpha(128);
 
                 //Change toolbar color
-//                toolbar.toolbarTitle.setTextColor(tab?.selectedColor ?: ContextCompat.getColor(this@MainActivity, R.color.colorPrimary))
+                toolbarTitle.setTextColor((tab != null) ? tab.getSelectedColor() : ContextCompat.getColor(HomeActivity.this, R.color.colorPrimary));
             }
 
             @Override

@@ -2,6 +2,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     android:orientation="vertical">
 
     <com.yalantis.jellytoolbar.widget.JellyToolbar
@@ -11,7 +12,18 @@
         app:endColor="@color/colorEnd"
         app:icon="@drawable/ic_search"
         app:startColor="@color/colorStart"
-        app:titleTextColor="@android:color/white" />
+        app:titleTextColor="@android:color/white">
+
+        <tech.codegarage.apkbackup.view.CanaroTextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="@dimen/activity_title_text_size" />
+
+    </com.yalantis.jellytoolbar.widget.JellyToolbar>
 
     <com.yalantis.colormatchtabs.colormatchtabs.colortabs.ColorMatchTabLayout
         android:id="@+id/color_match_tab_layout_backup"
