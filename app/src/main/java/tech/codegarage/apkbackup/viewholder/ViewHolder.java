@@ -12,7 +12,7 @@ import tech.codegarage.apkbackup.model.ApplicationInfo;
  * @author Md. Rashadul Alam
  * Email: rashed.droid@gmail.com
  */
-class ViewHolder extends RecyclerView.ViewHolder {
+public class ViewHolder extends RecyclerView.ViewHolder {
     TextView track;
     TextView artist;
     ImageView avatar;
@@ -27,6 +27,6 @@ class ViewHolder extends RecyclerView.ViewHolder {
     public static void bind(ViewHolder viewHolder, ApplicationInfo applicationInfo) {
         viewHolder.track.setText(applicationInfo.getAppName());
         viewHolder.artist.setText(applicationInfo.getAppPackage());
-        viewHolder.avatar.setImageResource(track.getAlbum());
+        viewHolder.avatar.setImageResource(applicationInfo.getAppIcon());
     }
 }

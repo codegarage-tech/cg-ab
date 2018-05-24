@@ -11,14 +11,14 @@ import java.io.Serializable;
 public class ApplicationInfo implements Comparable<ApplicationInfo>, Serializable {
 
     private String appName;
+    private String appPackage;
     private @DrawableRes
     int appIcon;
-    private String appPackage;
 
-    public ApplicationInfo(String appName, int appIcon, String appPackage) {
+    public ApplicationInfo(String appName, String appPackage, int appIcon) {
         this.appName = appName;
-        this.appIcon = appIcon;
         this.appPackage = appPackage;
+        this.appIcon = appIcon;
     }
 
     public String getAppName() {
