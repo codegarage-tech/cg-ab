@@ -13,5 +13,18 @@
         app:startColor="@color/colorStart"
         app:titleTextColor="@android:color/white" />
 
+    <com.yalantis.colormatchtabs.colormatchtabs.colortabs.ColorMatchTabLayout
+        android:id="@+id/color_match_tab_layout_backup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:elevation="6dp"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager_backup"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent" />
 
 </LinearLayout>
