@@ -1,0 +1,6 @@
+println rootProject.projectDir
+
+include ':app',
+        'sidemenu',
+        'jellytoolbar',
+        'colormatchtabs'
