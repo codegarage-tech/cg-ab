@@ -17,8 +17,7 @@
         android:id="@+id/color_match_tab_layout_backup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
-        android:elevation="6dp"
+        android:background="@drawable/toolbar_bg"
         android:minHeight="?attr/actionBarSize"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
