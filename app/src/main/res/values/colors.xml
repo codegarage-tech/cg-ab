@@ -17,4 +17,7 @@
     <color name="colorDishText">#696564</color>
     <color name="colorCafeName">#8a93d2</color>
     <color name="colorReview">#9b9b9b</color>
+
+    <!-- Multi-selection -->
+    <color name="colorDarkish">#161618</color>
 </resources>

@@ -3,5 +3,8 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
-    <dimen name="sliding_menu_width">70dp</dimen>
+    <!-- Multi-selection -->
+    <dimen name="padding">8dp</dimen>
+    <dimen name="margin">8dp</dimen>
+    <dimen name="decoration_size">1.5dp</dimen>
 </resources>
