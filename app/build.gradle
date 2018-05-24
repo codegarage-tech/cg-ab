@@ -106,4 +106,5 @@ dependencies {
 
     implementation project(':jellytoolbar')
     implementation project(':colormatchtabs')
+    implementation project(':multiselection')
 }
